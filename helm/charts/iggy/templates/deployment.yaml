@@ -29,6 +29,11 @@ spec:
   selector:
     matchLabels:
       {{ include "iggy.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
   template:
     metadata:
       {{- with .Values.podAnnotations }}
