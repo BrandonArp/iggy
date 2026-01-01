@@ -133,7 +133,7 @@ spec:
               service:
                 name: {{ $fullName }}
                 port:
-                  number: {{ $svcPort }}
+                  name: http
               {{- else }}
               serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
