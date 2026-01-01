@@ -39,21 +39,4 @@ spec:
   selector:
     {{- include "iggy.selectorLabels" . | nindent 4 }}
 {{- end }}
-{{ if .Values.ui.enabled }}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ include "iggy.fullname" . }}-ui
-  labels:
-    {{ include "iggy-ui.labels" . | nindent 4 }}
-spec:
-  type: {{ .Values.ui.service.type }}
-  ports:
-    - name: http
-      port: {{ .Values.ui.ports.http }}
-      targetPort: http
-      protocol: TCP
-  selector:
-    {{ include "iggy-ui.selectorLabels" . | nindent 4 }}
-{{- end }}
+
