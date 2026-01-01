@@ -137,11 +137,6 @@ ui:
   replicaCount: 1
   # -- Extra environmental variables to add to the container
   env: {}
-  image:
-    repository: apache/iggy-web-ui
-    pullPolicy: Always
-    # Overrides the image tag whose default is the chart appVersion.
-    tag: "edge"
   ingress:
     enabled: false
     className: ""
@@ -151,7 +146,7 @@ ui:
     hosts:
       - host: chart-example.local
         paths:
-          - path: /
+          - path: /ui
             pathType: ImplementationSpecific
     tls: []
     #  - secretName: chart-example-tls
